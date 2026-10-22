@@ -2,6 +2,22 @@
 
 AI 驱动的生活记忆整理工具。用户写下当天经历、感受并添加照片，Demo 将记录整理为可以翻看的日记回放。
 
+## 在线体验
+
+[打开 Today 交互预览](https://wll-atmioo.github.io/today-ai-journal-demo/)
+
+## 页面预览
+
+以下截图来自公开站点的内置“海边旅行”示例，不包含个人日记。示例文案与照片为预置演示素材。
+
+| 日记首页 | 写下今天 |
+| --- | --- |
+| ![日记首页](media/preview-home.png) | ![海边旅行示例记录](media/preview-record.png) |
+
+| 回放封面 | 回放场景 |
+| --- | --- |
+| ![海边旅行示例回放封面](media/preview-replay.png) | ![海边旅行示例回放场景](media/preview-scene.png) |
+
 ## 核心流程
 
 用户记录 → Memory Understanding Pipeline → Event → Fragment → Replay
