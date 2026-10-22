@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="深夜的城市，月亮和零星的灯光">
+<defs>
+<radialGradient id="w1" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#D9CFE7"/><stop offset="100%" stop-color="#D9CFE7" stop-opacity="0"/></radialGradient>
+<radialGradient id="w2" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#C6D9E8"/><stop offset="100%" stop-color="#C6D9E8" stop-opacity="0"/></radialGradient>
+<filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0.08 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="#FBF7EF"/>
+<ellipse cx="880" cy="220" rx="300" ry="220" fill="url(#w1)" filter="url(#s)"/>
+<ellipse cx="280" cy="640" rx="330" ry="240" fill="url(#w2)" filter="url(#s)"/>
+<g fill="none" stroke="#6E655A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+<path d="M830 190 A115 115 0 1 0 945 385 A92 92 0 1 1 830 190 Z"/>
+<rect x="150" y="600" width="110" height="240" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="300" y="650" width="90" height="190" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="430" y="560" width="120" height="280" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="600" y="520" width="100" height="320" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="740" y="580" width="110" height="260" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="890" y="630" width="95" height="210" rx="4" fill="#FBF7EF" fill-opacity="0.7"/>
+</g>
+<g fill="none" stroke="#6E655A" stroke-width="5" stroke-linecap="round" opacity="0.4">
+<path d="M400 220 v36 M382 238 h36"/>
+<path d="M560 180 v26 M547 193 h26"/>
+<path d="M505 330 v30 M493 345 h24"/>
+<path d="M668 268 v24 M657 280 h22"/>
+<line x1="120" y1="840" x2="1080" y2="840"/>
+</g>
+<rect x="630" y="590" width="26" height="26" fill="#F1DCA4" stroke="none" opacity="0.9"/>
+<rect x="180" y="650" width="22" height="22" fill="#F1DCA4" stroke="none" opacity="0.8"/>
+<rect width="1200" height="900" filter="url(#g)" opacity="0.6"/>
+</svg>

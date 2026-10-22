@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="热气腾腾的一碗饭和一双筷子">
+<defs>
+<radialGradient id="w1" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#F4D6C0"/><stop offset="100%" stop-color="#F4D6C0" stop-opacity="0"/></radialGradient>
+<radialGradient id="w2" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#EFCFC8"/><stop offset="100%" stop-color="#EFCFC8" stop-opacity="0"/></radialGradient>
+<filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0.08 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="#FBF7EF"/>
+<ellipse cx="330" cy="300" rx="330" ry="240" fill="url(#w1)" filter="url(#s)"/>
+<ellipse cx="900" cy="650" rx="350" ry="250" fill="url(#w2)" filter="url(#s)"/>
+<g fill="none" stroke="#6E655A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+<line x1="180" y1="650" x2="1020" y2="650"/>
+<path d="M385 560 Q600 790 815 560"/>
+<line x1="380" y1="560" x2="820" y2="560"/>
+<ellipse cx="940" cy="618" rx="95" ry="26"/>
+<line x1="700" y1="300" x2="920" y2="470"/>
+<line x1="740" y1="290" x2="950" y2="450"/>
+</g>
+<g fill="none" stroke="#6E655A" stroke-width="5" stroke-linecap="round" opacity="0.4">
+<path d="M520 520 q-14 -26 4 -48 q16 -20 4 -44"/>
+<path d="M660 512 q-12 -24 4 -44 q14 -18 4 -40"/>
+<ellipse cx="940" cy="618" rx="52" ry="13"/>
+</g>
+<rect width="1200" height="900" filter="url(#g)" opacity="0.6"/>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="书桌上的书和一盏台灯">
+<defs>
+<radialGradient id="w1" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#F2E2BC"/><stop offset="100%" stop-color="#F2E2BC" stop-opacity="0"/></radialGradient>
+<radialGradient id="w2" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#C6D9E8"/><stop offset="100%" stop-color="#C6D9E8" stop-opacity="0"/></radialGradient>
+<filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0.08 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="#FBF7EF"/>
+<ellipse cx="320" cy="300" rx="330" ry="240" fill="url(#w1)" filter="url(#s)"/>
+<ellipse cx="900" cy="620" rx="340" ry="250" fill="url(#w2)" filter="url(#s)"/>
+<g fill="none" stroke="#6E655A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+<line x1="180" y1="660" x2="1020" y2="660"/>
+<rect x="300" y="610" width="210" height="40" rx="8" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="315" y="572" width="190" height="40" rx="8" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="295" y="534" width="225" height="40" rx="8"/>
+<path d="M560 655 Q650 585 740 655"/>
+<path d="M740 655 Q830 585 920 655"/>
+<line x1="950" y1="660" x2="950" y2="470"/>
+<path d="M950 470 Q948 440 900 432"/>
+<path d="M838 438 h96 l-24 -54 h-48 z"/>
+</g>
+<path d="M852 448 L916 448 L960 652 L806 652 Z" fill="#F6E9C6" opacity="0.4"/>
+<g fill="none" stroke="#6E655A" stroke-width="5" stroke-linecap="round" opacity="0.4">
+<line x1="740" y1="600" x2="740" y2="655"/>
+<path d="M580 655 Q660 610 740 655" opacity="0.3"/>
+<path d="M740 655 Q820 610 900 655" opacity="0.3"/>
+</g>
+<rect width="1200" height="900" filter="url(#g)" opacity="0.6"/>
+</svg>

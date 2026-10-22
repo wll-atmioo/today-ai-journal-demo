@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Today · 私人生活手账</title>
+  <meta name="description" content="把「我经历了这一天」，变成「我能够重新看见这一天」。">
+  <meta name="theme-color" content="#F2EBDD">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='26' fill='%23E9B4AD'/%3E%3Ccircle cx='25' cy='26' r='13' fill='%23F3E3BE' opacity='.85'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css?v=19">
+</head>
+<body data-page="start">
+
+  <div class="bg-wash" aria-hidden="true">
+    <i class="blob b1"></i><i class="blob b2"></i><i class="blob b3"></i><i class="blob b4"></i>
+  </div>
+
+  <main id="app">
+
+    <!-- 00 Start -->
+    <section class="page active" data-page="start">
+      <div class="page-inner start-inner">
+        <div class="start-deco" aria-hidden="true">
+          <span class="deco doodle-sun"></span>
+          <span class="deco doodle-leaf"></span>
+          <span class="deco doodle-star">✦</span>
+          <span class="deco doodle-thread"></span>
+        </div>
+        <div class="start-sheet" id="journal-cover">
+          <div class="start-sheet-stitch" aria-hidden="true"></div>
+          <div class="start-hero">
+            <div class="brand"><i class="brand-dot" aria-hidden="true"></i>Today</div>
+            <p class="start-date" id="start-date">今天的一页</p>
+            <picture class="start-story-art" aria-hidden="true">
+              <source srcset="assets/scenes/generic.webp" type="image/webp">
+              <img src="assets/scenes/generic.svg" alt="">
+            </picture>
+            <p class="start-kicker"><span class="journal-script" lang="en">a day to keep</span><span>写给自己的生活手账</span></p>
+            <h1 class="start-title">今天，想留下一页什么？</h1>
+            <p class="start-sub">一件小事、一种心情，都可以写进来。<br>日后翻开，还能认出那时的自己。</p>
+          </div>
+          <div class="start-cta">
+            <button type="button" id="btn-start" class="btn-primary">打开日记本</button>
+            <button type="button" id="btn-guess" class="guess-card" aria-label="翻开一则生活示例">
+              <span class="guess-pin" aria-hidden="true"></span>
+              <span class="guess-q" id="guess-text">还没想好怎么写？</span>
+              <span class="guess-cta" id="guess-cta">翻开一则示例 →</span>
+            </button>
+            <div class="example-list" id="example-list" hidden></div>
+            <button type="button" id="btn-cal-entry" class="btn-ghost" hidden>翻看旧日记</button>
+            <button type="button" id="btn-start-prefs" class="btn-text">给日记本换个样子</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 01 Record 自由记录 -->
+    <section class="page" data-page="record">
+      <div class="page-inner record-inner">
+        <header class="topbar">
+          <button type="button" id="btn-record-back" class="icon-btn" aria-label="返回开始页">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="brand"><i class="brand-dot" aria-hidden="true"></i>Today</div>
+          <span class="topbar-ghost" aria-hidden="true"></span>
+        </header>
+
+        <div class="record-hero">
+          <p class="letter-kicker journal-script" lang="en">notes for later</p>
+          <p class="record-date" id="record-date"></p>
+          <h2 class="record-title">今天，<br>有什么想留下来？</h2>
+          <p class="record-sub">不用写得很完整。<br>想到什么，就先记什么。</p>
+        </div>
+
+        <div class="diary-paper">
+          <span class="diary-tape" aria-hidden="true"></span>
+          <div class="diary-head"><span id="diary-date"></span><span class="diary-stamp">Today · 一页</span></div>
+          <textarea id="input-today" rows="6"></textarea>
+        </div>
+        <div class="example-record-panel card-paper" id="example-record-panel" hidden>
+          <p class="record-extra-title">预置演示 · <span id="example-record-title"></span></p>
+          <p class="record-extra-note">上面是完整的用户原始输入；下面是预置照片素材。AI 会按记录整理生活片段，再把照片、主题插画和回望放进同一页。此示例为人工预写的固定演示，不代表任意输入都有同等生成效果。</p>
+          <p class="example-photo-heading">今天留下的照片</p>
+          <div class="example-photo-gallery" id="example-photo-gallery"></div>
+        </div>
+        <div class="record-photo card-paper" id="record-photo-card">
+          <div><p class="record-extra-title">留一张那天的照片</p><p class="record-extra-note">真实照片会随这一页保存；绘本插画只是主题画面。稍后也能在片段里更换。</p></div>
+          <button type="button" id="btn-record-photo" class="btn-mini btn-mini-ghost">添加照片</button>
+          <input type="file" id="input-record-photo" accept="image/*" hidden>
+          <div id="record-photo-preview" class="record-photo-preview" hidden></div>
+        </div>
+        <div class="short-panel" id="short-panel" hidden>
+          <p class="short-tip">再多留下一点细节，<br>以后回看时会更有画面。</p>
+          <p class="short-eg">比如：去了哪里、遇见了谁、吃了什么，<br>或者哪一刻让你有了这种感觉。</p>
+          <div class="short-actions">
+            <button type="button" class="btn-mini btn-mini-primary" id="btn-short-continue">继续补充</button>
+            <button type="button" class="btn-mini btn-mini-ghost" id="btn-short-go">就先记到这里</button>
+          </div>
+        </div>
+
+        <div class="mood card-paper">
+          <p class="mood-title">现在回想今天，你更接近哪种感觉？（可选）</p>
+          <div class="mood-row" id="mood-row"></div>
+        </div>
+        <div class="reminder card-paper">
+          <div class="reminder-head"><div><p class="record-extra-title">给未来留个小提醒</p><p class="record-extra-note">下次打开日记或日历时能看到；目前不会弹出系统通知。</p></div><label class="reminder-switch"><input id="reminder-enabled" type="checkbox"><span>设提醒</span></label></div>
+          <div class="reminder-fields" id="reminder-fields" hidden><label>哪一天<input id="reminder-date" type="date"></label><label>想提醒自己什么<input id="reminder-text" type="text" maxlength="80" placeholder="例如：周末把这一天补完整"></label><button type="button" class="btn-mini btn-mini-primary" id="btn-reminder-save">收好提醒</button></div>
+          <p class="reminder-saved" id="reminder-saved" hidden></p>
+        </div>
+
+        <div class="record-cta">
+          <button type="button" id="btn-record" class="btn-primary" disabled>留下今天</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 Fragment Confirm 今日片段确认 -->
+    <section class="page" data-page="confirm">
+      <div class="page-inner confirm-inner">
+        <header class="topbar">
+          <button type="button" id="btn-confirm-back" class="icon-btn" aria-label="返回记录页">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <div class="brand"><i class="brand-dot" aria-hidden="true"></i>Today</div>
+          <span class="topbar-ghost" aria-hidden="true"></span>
+        </header>
+
+        <div class="confirm-hero">
+          <p class="confirm-editing" id="confirm-editing" hidden></p>
+          <h2 class="confirm-title" id="confirm-title">看看今天记下了什么</h2>
+          <p class="confirm-sub" id="confirm-sub">哪里不准确，都可以改成你的说法。时间和照片也可以慢慢补上。</p>
+          <p class="confirm-mode-note" id="confirm-mode-note" hidden></p>
+          <button type="button" id="btn-raw-toggle" class="confirm-raw-toggle" aria-expanded="false">看看最初写下的话 ▾</button>
+        </div>
+
+        <div class="confirm-raw card-paper" id="confirm-raw" hidden>
+          <div class="diary-text diary-text-sm" id="confirm-raw-text"></div>
+        </div>
+
+        <div class="frag-list" id="frag-list"></div>
+        <div class="frag-add-zone" id="frag-add-zone"></div>
+
+        <div class="confirm-actions" id="confirm-actions">
+          <button type="button" id="btn-confirm-generate" class="btn-primary">就这样，翻开这一天</button>
+          <button type="button" id="btn-confirm-back2" class="btn-secondary">回去再写几句</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 Generating -->
+    <section class="page" data-page="generating">
+      <div class="page-inner gen-inner">
+        <div class="gen-stage">
+          <div class="gen-book" aria-hidden="true">
+            <span class="gen-page-back"></span>
+            <span class="gen-page">
+              <i class="gen-wash gen-wash-one"></i>
+              <i class="gen-wash gen-wash-two"></i>
+              <svg class="gen-sketch" viewBox="0 0 240 160" fill="none">
+                <path d="M35 124 C72 105 164 104 207 124"/>
+                <path d="M88 99 C91 72 105 58 122 58 C139 58 153 73 156 99"/>
+                <path d="M102 58 C104 38 116 28 128 28 C142 28 151 39 150 57"/>
+                <path d="M72 116 L72 82 L97 82"/>
+                <path d="M165 115 L165 75 L188 75 L188 115"/>
+                <path d="M172 68 L182 56 L194 68"/>
+              </svg>
+            </span>
+          </div>
+          <h2 class="gen-title">这一页，慢慢有了模样</h2>
+          <p class="gen-status" id="gen-status">写下的小事，先落在纸上…</p>
+          <div class="gen-keywords" id="gen-keywords" aria-hidden="true"></div>
+          <div class="gen-skeletons" id="gen-skeletons" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 Today Replay -->
+    <section class="page" data-page="replay">
+      <button type="button" id="btn-replay-back" class="icon-btn reel-back" aria-label="返回">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+      </button>
+      <div class="reel" id="reel"></div>
+      <div class="reel-dots" id="reel-dots" aria-hidden="true"></div>
+    </section>
+
+    <!-- 05 Life Calendar -->
+    <section class="page" data-page="calendar">
+      <div class="page-inner cal-inner">
+        <header class="topbar">
+          <button type="button" id="btn-cal-back" class="icon-btn" aria-label="返回开始页">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg>
+          </button>
+          <h1 class="cal-brand">日记目录</h1>
+          <span class="topbar-ghost" aria-hidden="true"></span>
+        </header>
+
+        <p class="cal-tagline">把走过的日子，一页页收好</p>
+        <div class="cal-intro"><p>点开有画面的日子，再读一遍；空白的过去，也能补上一页。</p><p>写过的日子，可以慢慢补全。</p></div>
+        <div class="cal-personal"><button type="button" id="btn-cal-prefs" class="btn-text">布置我的日记目录</button><span id="cal-view-label"></span></div>
+
+        <div class="cal-card card-paper">
+          <div class="cal-nav">
+            <button type="button" id="btn-cal-prev" class="icon-btn" aria-label="上个月">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 5.5L8 12l6.5 6.5"/></svg>
+            </button>
+            <h2 class="cal-title" id="cal-title"></h2>
+            <button type="button" id="btn-cal-next" class="icon-btn" aria-label="下个月">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 5.5L16 12l-6.5 6.5"/></svg>
+            </button>
+          </div>
+          <div class="cal-grid" id="cal-grid"></div>
+        </div>
+        <div class="cal-reminders card-paper" id="cal-reminders" hidden></div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Day Detail 全屏弹窗 -->
+  <div class="day-detail" id="day-detail" hidden style="display:none"></div>
+  <div class="prefs-overlay" id="prefs-overlay" hidden>
+    <div class="prefs-card" role="dialog" aria-modal="true" aria-label="把日记本布置成喜欢的样子"><div class="prefs-head"><div><p class="letter-kicker journal-script" lang="en">my little book</p><h2>把日记本布置成喜欢的样子</h2></div><button type="button" id="btn-prefs-close" class="icon-btn" aria-label="合上日记本设置">×</button></div>
+      <p class="prefs-note">慢慢挑一个喜欢的样子。合上再翻开，它还会在这里；写过的文字和留下的照片都不会变。</p>
+      <div class="prefs-preview" aria-live="polite"><img id="prefs-preview-img" alt="日记本风格预览"><div><span class="prefs-preview-kicker">翻开时的模样</span><strong id="prefs-preview-role"></strong><small id="prefs-preview-style"></small></div></div>
+      <div class="prefs-group"><h3>纸页的颜色</h3><div class="prefs-options" id="prefs-paper"></div></div>
+      <div class="prefs-group"><h3>这一页里想出现谁</h3><div class="prefs-options" id="prefs-character"></div><p class="prefs-hint">让一个人物陪着画面，或只留下景物和当天的气息。</p></div>
+      <div class="prefs-group"><h3>这一页想用什么画法</h3><div class="prefs-options" id="prefs-art-style"></div><p class="prefs-hint">水彩轻柔，简笔清爽，明信片像一张值得收好的小画。</p></div>
+      <div class="prefs-group"><h3>翻开日历时，想先看到什么</h3><div class="prefs-options" id="prefs-calendar-view"></div><p class="prefs-hint">画面、片段里的小字，或那天记下的感受。</p></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/schema.js"></script>
+  <script src="js/engine.js?v=16"></script>
+  <script src="js/demo.js?v=3"></script>
+  <script src="js/photos.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/preferences.js"></script>
+  <script src="js/content/contracts.js"></script>
+  <script src="js/content/validators.js"></script>
+  <script src="js/content/pipeline.js"></script>
+  <script src="js/content/providers/mock-provider.js?v=2"></script>
+  <script src="js/content/fragment-entry.js"></script>
+  <script src="js/content/replay-adapter.js"></script>
+  <script src="js/app.js?v=19"></script>
+</body>
+</html>

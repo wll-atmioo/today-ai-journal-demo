@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="家里的沙发、绿植和一扇安静的窗">
+<defs>
+<radialGradient id="w1" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#EFCFC8"/><stop offset="100%" stop-color="#EFCFC8" stop-opacity="0"/></radialGradient>
+<radialGradient id="w2" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#F2E2BC"/><stop offset="100%" stop-color="#F2E2BC" stop-opacity="0"/></radialGradient>
+<filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0.08 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="#FBF7EF"/>
+<ellipse cx="300" cy="280" rx="330" ry="240" fill="url(#w1)" filter="url(#s)"/>
+<ellipse cx="920" cy="640" rx="340" ry="250" fill="url(#w2)" filter="url(#s)"/>
+<g fill="none" stroke="#6E655A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+<rect x="230" y="190" width="360" height="320" rx="22"/>
+<rect x="400" y="500" width="430" height="90" rx="26" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="380" y="580" width="470" height="110" rx="24"/>
+<rect x="350" y="550" width="64" height="130" rx="28" fill="#FBF7EF" fill-opacity="0.7"/>
+<rect x="796" y="550" width="64" height="130" rx="28" fill="#FBF7EF" fill-opacity="0.7"/>
+<path d="M880 640 h100 l-16 90 h-68 z"/>
+<path d="M930 640 C905 560 880 530 862 502"/>
+<path d="M930 640 C952 550 975 520 992 492"/>
+</g>
+<g fill="none" stroke="#6E655A" stroke-width="5" stroke-linecap="round" opacity="0.4">
+<line x1="410" y1="190" x2="410" y2="510"/>
+<line x1="230" y1="350" x2="590" y2="350"/>
+<line x1="615" y1="592" x2="615" y2="688"/>
+<line x1="150" y1="742" x2="1050" y2="742"/>
+<path d="M930 640 C930 566 928 522 928 484"/>
+</g>
+<rect width="1200" height="900" filter="url(#g)" opacity="0.6"/>
+</svg>

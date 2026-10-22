@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" role="img" aria-label="柔和的太阳、云和远处的山丘">
+<defs>
+<radialGradient id="w1" cx="50%" cy="50%" r="65%"><stop offset="0%" stop-color="#EFCFC8"/><stop offset="100%" stop-color="#EFCFC8" stop-opacity="0"/></radialGradient>
+<radialGradient id="w2" cx="50%" cy="50%" r="62%"><stop offset="0%" stop-color="#CBE2D3"/><stop offset="100%" stop-color="#CBE2D3" stop-opacity="0"/></radialGradient>
+<filter id="s" x="-40%" y="-40%" width="180%" height="180%"><feGaussianBlur stdDeviation="30"/></filter>
+<filter id="g"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="matrix" values="0 0 0 0 0.40 0 0 0 0 0.36 0 0 0 0 0.30 0 0 0 0.08 0"/></filter>
+</defs>
+<rect width="1200" height="900" fill="#FBF7EF"/>
+<ellipse cx="620" cy="290" rx="300" ry="220" fill="url(#w1)" filter="url(#s)"/>
+<ellipse cx="300" cy="680" rx="340" ry="240" fill="url(#w2)" filter="url(#s)"/>
+<g fill="none" stroke="#6E655A" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.82">
+<circle cx="620" cy="290" r="78"/>
+<path d="M0 720 Q300 610 620 720"/>
+<path d="M560 740 Q880 640 1200 750"/>
+<ellipse cx="340" cy="520" rx="60" ry="28" fill="#FBF7EF" fill-opacity="0.9"/>
+<ellipse cx="402" cy="498" rx="48" ry="24" fill="#FBF7EF" fill-opacity="0.9"/>
+<ellipse cx="458" cy="522" rx="52" ry="26" fill="#FBF7EF" fill-opacity="0.9"/>
+<line x1="298" y1="545" x2="502" y2="545"/>
+</g>
+<g fill="none" stroke="#6E655A" stroke-width="5" stroke-linecap="round" opacity="0.4">
+<ellipse cx="790" cy="420" rx="44" ry="20" fill="#FBF7EF" fill-opacity="0.9"/>
+<ellipse cx="838" cy="404" rx="36" ry="18" fill="#FBF7EF" fill-opacity="0.9"/>
+<line x1="760" y1="438" x2="908" y2="438"/>
+<path d="M480 200 q10 -12 20 0 q10 -12 20 0"/>
+<path d="M560 168 q8 -10 16 0 q8 -10 16 0"/>
+</g>
+<rect width="1200" height="900" filter="url(#g)" opacity="0.6"/>
+</svg>
